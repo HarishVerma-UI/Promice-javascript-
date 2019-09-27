@@ -1,0 +1,28 @@
+let cleanRoom=function(){
+  return new Promise(function(res,req){
+    setTimeout(function(){ res("clean room is finished"); }, 9000);
+  });
+};
+
+let removeGarbage=function(){
+  return new Promise(function(res,req){
+    setTimeout(function(){ res("clean room garbage"); }, 8000);
+  });
+};
+
+let winIceCream=function(){
+  return new Promise(function(res,req){
+    setTimeout(function(){ res("win ice creame"); }, 1000);
+  });
+};
+
+removeGarbage()
+.then(function(res){
+       console.log(res);
+       return cleanRoom(res)})
+.then(function(res){
+       console.log(res);
+       return winIceCream(res)})
+.then(function(res){
+       console.log(res)
+       })
